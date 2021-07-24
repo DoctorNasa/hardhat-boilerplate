@@ -9,8 +9,8 @@ task("faucet", "Sends ETH and tokens to an address")
     if (network.name === "hardhat") {
       console.warn(
         "You are running the faucet task with Hardhat network, which" +
-          "gets automatically created and destroyed every time. Use the Hardhat" +
-          " option '--network localhost'"
+        "gets automatically created and destroyed every time. Use the Hardhat" +
+        " option '--network localhost'"
       );
     }
 
@@ -32,17 +32,17 @@ task("faucet", "Sends ETH and tokens to an address")
 
     const token = await ethers.getContractAt("Token", address.Token);
     const [sender] = await ethers.getSigners();
-  
+
     // 0.1ETH
     let bn1 = ethers.BigNumber.from("100000000000000000");
     // 1 ETH
     console.log('wei/eth: ', ethers.constants.WeiPerEther)
     // ethers.constants.WeiPerEther.mul(5000);
-    
+
     // const tokenAmount = Number.MAX_SAFE_INTEGER
-    const tokenAmount = 9*(1e15)
-    
-    const tx = await token.transfer(receiver, tokenAmount );
+    const tokenAmount = 9 * (1e15)
+
+    const tx = await token.transfer(receiver, tokenAmount);
     // const tx = await token.transfer(receiver, 1);
     await tx.wait();
 
@@ -52,5 +52,5 @@ task("faucet", "Sends ETH and tokens to an address")
     });
     await tx2.wait();
 
-    console.log(`Transferred ${bn1.toString()} Wei (ETH) and ${tokenAmount/(1e18)} PSU tokens to ${receiver}`);
+    console.log(`Transferred ${bn1.toString()} Wei (ETH) and ${tokenAmount / (1e18)} Thai Baht Stablecoin to ${receiver}`);
   });

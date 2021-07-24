@@ -6,7 +6,7 @@
  *Submitted for verification at Etherscan.io on 2020-09-15
 */
 
-pragma solidity ^0.5.16;
+pragma solidity >=0.5.16 <0.8.0;
 pragma experimental ABIEncoderV2;
 
 // From https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/Math.sol
@@ -196,10 +196,10 @@ library SafeMath {
 
 contract Token {
     /// @notice EIP-20 token name for this token
-    string public constant name = "Psu Token";
+    string public constant name = "Thai Baht Stablecoin";
 
     /// @notice EIP-20 token symbol for this token
-    string public constant symbol = "PSU";
+    string public constant symbol = "THB";
 
     /// @notice EIP-20 token decimals for this token
     uint8 public constant decimals = 18;
@@ -273,7 +273,7 @@ contract Token {
 
 
     /**
-     * @notice Construct a new PSU token
+     * @notice Construct a new Thai Baht Stablecoin token
       */
     // constructor(address account, address minter_, uint mintingAllowedAfter_) public {
     constructor() public {
